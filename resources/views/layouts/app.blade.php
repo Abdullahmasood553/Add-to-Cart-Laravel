@@ -19,6 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -29,12 +30,12 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
+              <li class="nav-item active mx-2">
                 <a class="nav-link" href="/">Home
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/cart">Cart</a>
+              <li class="nav-item mx-2">
+                <a href="{{ route('shoppingCart') }}"><i class="fa fa-shopping-cart text-white" style="margin-top: 12px;">&nbsp;&nbsp;<span class="badge badge-danger">{{ Session::has('cart') ? Session::get('cart')->totalQuantity : '' }}</span></i></a>
               </li>
             </ul>
           </div>

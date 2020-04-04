@@ -21,6 +21,7 @@ Route::get('/product/{slug}', 'ProductController@show');
 
 
 Route::get('add-to-cart/{id}', 'ProductController@getAddToCart')->name('addToCart');
+Route::get('shopping-cart', 'ProductController@getCart')->name('shoppingCart');
 
 Auth::routes();
 
